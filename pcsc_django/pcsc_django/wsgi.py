@@ -1,5 +1,5 @@
 """
-WSGI config for start_django project.
+WSGI config for pcsc_django project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'start_django.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'pcsc_django.settings')
 
 application = get_wsgi_application()
