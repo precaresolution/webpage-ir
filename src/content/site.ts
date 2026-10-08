@@ -9,9 +9,10 @@ import pcscHisNew from "@/assets/images/pcsc_history_new.png";
 import pcscHis from "@/assets/images/pcsc_history.png";
 import pcscLogo from "@/assets/images/pcsc_logo.svg";
 import seosanHospitalLogo from "@/assets/images/Seosan_Hospital_logo.png";
+import nchLogo from "@/assets/images/NCH_logo.svg";
 
 export const site = {
-  name: "프리케어 솔루션",
+  name: "프리케어솔루션",
   nameEn: "PreCare Solution",
   nav: [
     { label: "COMPANY", href: "#company" },
@@ -40,6 +41,7 @@ export const site = {
     pcscHis,
     pcscLogo,
     seosanHospitalLogo,
+    nchLogo,
   },
 
 } as const;

@@ -2,15 +2,17 @@
 
 import { useEffect, useRef } from "react";
 
-export default function NaverMap() {
+interface NaverMapProps {
+  clientId: string;
+}
+
+export default function NaverMap({ clientId }: NaverMapProps) {
   const mapRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         window.navermap_authFailure = () => {
             console.error("네이버 지도 API 인증 실패");
         };
-
-        const clientId = process.env.NEXT_PUBLIC_NAVER_MAP_CLIENT_ID;
 
         if (!clientId) {
             console.error("네이버 지도 Client ID가 없습니다.");
@@ -19,7 +21,7 @@ export default function NaverMap() {
 
         const script = document.createElement("script");
 
-        script.src = `https://oapi.map.naver.com/openapi/v3/maps.js` + `?ncpKeyId=${clientId}`;
+        script.src = `https://oapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=${clientId}`;
 
         script.async = true;
 
@@ -38,7 +40,7 @@ export default function NaverMap() {
                 keyboardShortcuts: false,
             });
 
-            new window.naver.maps.Marker({
+            const marker = new window.naver.maps.Marker({
                 position: location,
                 map,
             });
@@ -47,26 +49,20 @@ export default function NaverMap() {
                 content: `
                     <div style="padding: 10px 15px; font-size: 14px; font-weight: 600; white-space: nowrap;">
                         프리케어 솔루션
-                    </div>
-
-                    
-                `,
+                    </div>`,
             });
 
-            const marker = new window.naver.maps.Marker({
-                position: location,
-                map,
-            });
-            
             infoWindow.open(map, marker);
     };
 
     document.head.appendChild(script);
 
     return () => {
-      document.head.removeChild(script);
+      if (document.head.contains(script)) {
+        document.head.removeChild(script);
+      }
     };
-  }, []);
+  }, [clientId]);
 
   return (
     <div className="relative">
@@ -77,7 +73,5 @@ export default function NaverMap() {
             길찾기
         </a>
     </div>
-    
-
   );
 }

@@ -10,7 +10,7 @@ export default function Footer() {
           <div className="mt-3 flex flex-col gap-y-1 text-left text-xs font-light antialiased opacity-80">
               <p>{site.copyright}</p>
               <p>
-                상호명 : {site.name}(주) / 대표전화 : {site.contact.phone} / 이메일 :{" "}
+                상호명 : (주){site.name} / 대표전화 : {site.contact.phone} / 이메일 :{" "}
                 {site.contact.email}
               </p>
               <p>주소 : {site.contact.address}</p>
