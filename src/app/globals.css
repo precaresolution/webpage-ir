@@ -1,1 +1,14 @@
 @import "tailwindcss";
+
+.font-mbc{
+    font-family: var(--font-mbc);
+}
+
+.font-gong{
+    font-family: var(--font-gong);
+}
+
+p {
+    color:#212529;
+    font-family: var(--font-mbc);
+}

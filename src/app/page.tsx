@@ -1,8 +1,8 @@
 import Hero from "@/components/Hero";
 import Company from "@/components/Company";
 import History from "@/components/History";
-import Solutions from "@/components/Solutions";
-import Greeting from "@/components/Greeting";
+// import Solutions from "@/components/Solutions";
+import Partners from "@/components/Partners";
 import Contact from "@/components/Contact";
 
 export default function Home() {
@@ -11,8 +11,8 @@ export default function Home() {
       <Hero />
       <Company />
       <History />
-      <Solutions />
-      <Greeting />
+      {/* <Solutions /> */}
+      <Partners />
       <Contact />
     </>
   );
