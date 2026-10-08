@@ -10,7 +10,7 @@ export default function NaverMap() {
             console.error("네이버 지도 API 인증 실패");
         };
 
-        const clientId = process.env.NEXT_PUBLIC_NAVER_MAP_CLIENT_ID;
+        const clientId = process.env.NAVER_MAP_CLIENT_ID;
 
         if (!clientId) {
             console.error("네이버 지도 Client ID가 없습니다.");
